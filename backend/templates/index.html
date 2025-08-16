@@ -8,15 +8,31 @@
     <form method="POST">
         <label>Your Name:</label><br>
         <input type="text" name="name" required><br><br>
+
         <label>Doctor Name:</label><br>
         <input type="text" name="doctor" required><br><br>
+
+        <label>Issue:</label><br>
+        <input type="text" name="issue" required><br><br>
+
+        <label>Number of Days:</label><br>
+        <input type="number" name="days" min="1" required><br><br>
+
+        <label>Symptoms:</label><br>
+        <textarea name="symptoms" rows="4" cols="40" placeholder="Describe symptoms..." required></textarea><br><br>
+
         <button type="submit">Book</button>
     </form>
 
     <h2>Appointments</h2>
     <ul>
         {% for appointment in appointments %}
-            <li>{{ appointment.name }} booked with Dr. {{ appointment.doctor }}</li>
+            <li>
+                {{ appointment.name }} booked with Dr. {{ appointment.doctor }}<br>
+                Issue: {{ appointment.issue }}<br>
+                Duration: {{ appointment.days }} days<br>
+                Symptoms: {{ appointment.symptoms }}
+            </li><br>
         {% endfor %}
     </ul>
 </body>
