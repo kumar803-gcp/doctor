@@ -12,6 +12,16 @@
         <label>Doctor Name:</label><br>
         <input type="text" name="doctor" required><br><br>
 
+        <label>Specialization:</label><br>
+        <select name="specialization" required>
+            <option value="">--Select--</option>
+            <option value="General Physician">General Physician</option>
+            <option value="Cardiologist">Cardiologist</option>
+            <option value="Dermatologist">Dermatologist</option>
+            <option value="Pediatrician">Pediatrician</option>
+            <option value="Orthopedic">Orthopedic</option>
+        </select><br><br>
+
         <label>Issue:</label><br>
         <input type="text" name="issue" required><br><br>
 
@@ -29,6 +39,7 @@
         {% for appointment in appointments %}
             <li>
                 {{ appointment.name }} booked with Dr. {{ appointment.doctor }}<br>
+                Specialization: {{ appointment.specialization }}<br>
                 Issue: {{ appointment.issue }}<br>
                 Duration: {{ appointment.days }} days<br>
                 Symptoms: {{ appointment.symptoms }}

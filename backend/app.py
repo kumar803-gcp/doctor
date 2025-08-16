@@ -8,6 +8,7 @@ def index():
     if request.method == 'POST':
         name = request.form['name']
         doctor = request.form['doctor']
+        specialization = request.form['specialization']
         issue = request.form['issue']
         days = request.form['days']
         symptoms = request.form['symptoms']
@@ -15,6 +16,7 @@ def index():
         appointments.append({
             'name': name,
             'doctor': doctor,
+            'specialization': specialization,
             'issue': issue,
             'days': days,
             'symptoms': symptoms
